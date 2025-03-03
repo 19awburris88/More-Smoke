@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lounge Finder - More Smoke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px 15px;
+            background: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .lounge-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .lounge-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .lounge-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Find a More Smoke Lounge Near You</header>
+    
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Enter your city or ZIP code">
+            <button>Search</button>
+        </div>
+        
+        <h2>Available Lounges</h2>
+        <div class="lounge-list">
+            <div class="lounge-item">
+                <img src="lounge1.jpg" alt="Lounge 1">
+                <h3>Cosmo Knights</h3>
+                <p>Indianapolis, IN</p>
+                <a href="#" class="cta-button">View Details</a>
+            </div>
+            
+            <div class="lounge-item">
+                <img src="lounge2.jpg" alt="Lounge 2">
+                <h3>LG's Cigar Lounge</h3>
+                <p>Dallas, TX</p>
+                <a href="#" class="cta-button">View Details</a>
+            </div>
+            
+            <div class="lounge-item">
+                <img src="lounge3.jpg" alt="Lounge 3">
+                <h3>The Cigar Suite</h3>
+                <p>Atlanta, GA</p>
+                <a href="#" class="cta-button">View Details</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 More Smoke | All Rights Reserved
+    </footer>
+</body>
+</html>

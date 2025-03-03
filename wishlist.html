@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - More Smoke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            text-align: center;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .wishlist-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .wishlist-item img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .wishlist-info {
+            flex-grow: 1;
+            padding: 0 15px;
+            text-align: left;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff4500;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        .remove-button {
+            background: red;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Your Wishlist - More Smoke</header>
+    
+    <div class="container">
+        <h2>Saved Items</h2>
+        
+        <div class="wishlist-item">
+            <img src="cigar1.jpg" alt="Tempus Fugit Cigar">
+            <div class="wishlist-info">
+                <h3>Tempus Fugit</h3>
+                <p>Medium-bodied with notes of cedar and spice</p>
+            </div>
+            <button class="cta-button">Add to Cart</button>
+            <button class="cta-button remove-button">Remove</button>
+        </div>
+        
+        <div class="wishlist-item">
+            <img src="cigar2.jpg" alt="Cowboy Caviar Cigar">
+            <div class="wishlist-info">
+                <h3>Cowboy Caviar</h3>
+                <p>Bold with espresso and chocolate notes</p>
+            </div>
+            <button class="cta-button">Add to Cart</button>
+            <button class="cta-button remove-button">Remove</button>
+        </div>
+        
+        <div class="wishlist-item">
+            <img src="hat.jpg" alt="More Smoke Hat">
+            <div class="wishlist-info">
+                <h3>More Smoke Hat</h3>
+                <p>Stylish cigar lifestyle hat</p>
+            </div>
+            <button class="cta-button">Add to Cart</button>
+            <button class="cta-button remove-button">Remove</button>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 More Smoke | All Rights Reserved
+    </footer>
+</body>
+</html>

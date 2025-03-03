@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Smoke - Cigar Lifestyle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px;
+            background: url('hero-image.jpg') center/cover;
+            color: white;
+        }
+        .hero h1 {
+            margin: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .featured-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+        .featured-item {
+            width: 30%;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>More Smoke - Elevate Your Cigar Experience</header>
+    
+    <div class="hero">
+        <h1>Find Your Perfect Cigar</h1>
+        <p>Take our quiz and get a personalized recommendation.</p>
+        <a href="quiz.html" class="cta-button">Start Quiz</a>
+    </div>
+    
+    <div class="container">
+        <section class="featured-section">
+            <div class="featured-item">
+                <h2>New Releases</h2>
+                <p>Explore our latest premium cigars.</p>
+            </div>
+            <div class="featured-item">
+                <h2>Top Picks</h2>
+                <p>Discover fan favorites and best-sellers.</p>
+            </div>
+            <div class="featured-item">
+                <h2>Shop More Smoke</h2>
+                <p>Find apparel, accessories, and more.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        &copy; 2025 More Smoke | All Rights Reserved
+    </footer>
+    <div id="navbar"></div>
+
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('navbar').innerHTML = data);
+</script>
+</body>
+</html>

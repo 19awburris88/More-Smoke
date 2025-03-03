@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - More Smoke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .settings-section {
+            margin-top: 20px;
+        }
+        .settings-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .settings-item label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .settings-item input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Account Settings - More Smoke</header>
+    
+    <div class="container">
+        <h2>Manage Your Account</h2>
+        
+        <div class="settings-section">
+            <div class="settings-item">
+                <h3>Update Profile</h3>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" value="John Doe">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="johndoe@example.com">
+                
+                <button class="cta-button">Save Changes</button>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <div class="settings-item">
+                <h3>Change Password</h3>
+                <label for="current-password">Current Password</label>
+                <input type="password" id="current-password" name="current-password">
+                
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" name="new-password">
+                
+                <label for="confirm-password">Confirm New Password</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+                
+                <button class="cta-button">Update Password</button>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <div class="settings-item">
+                <h3>Notification Preferences</h3>
+                <label><input type="checkbox" checked> Receive promotional emails</label>
+                <label><input type="checkbox"> Get notified about new cigar releases</label>
+                <label><input type="checkbox" checked> Receive order updates</label>
+                <button class="cta-button">Update Preferences</button>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <div class="settings-item">
+                <h3>Delete Account</h3>
+                <p><strong>Warning:</strong> Deleting your account is permanent and cannot be undone.</p>
+                <button class="cta-button" style="background: red;">Delete My Account</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 More Smoke | All Rights Reserved
+    </footer>
+</body>
+</html>

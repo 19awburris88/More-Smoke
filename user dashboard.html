@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - More Smoke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .dashboard-menu {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+        }
+        .dashboard-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .dashboard-section {
+            margin-top: 20px;
+        }
+        .dashboard-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>User Dashboard - More Smoke</header>
+    
+    <div class="dashboard-menu">
+        <a href="#profile">Profile</a>
+        <a href="#orders">Order History</a>
+        <a href="#membership">Membership</a>
+        <a href="#recommendations">Cigar Recommendations</a>
+        <a href="#settings">Settings</a>
+    </div>
+    
+    <div class="container">
+        <div class="dashboard-section" id="profile">
+            <div class="dashboard-card">
+                <h2>Welcome, [User Name]</h2>
+                <p>Email: user@example.com</p>
+                <p>Membership Level: Gold</p>
+                <a href="#settings">Edit Profile</a>
+            </div>
+        </div>
+        
+        <div class="dashboard-section" id="orders">
+            <div class="dashboard-card">
+                <h2>Recent Orders</h2>
+                <p>No recent orders. <a href="shop.html">Shop Now</a></p>
+            </div>
+        </div>
+        
+        <div class="dashboard-section" id="membership">
+            <div class="dashboard-card">
+                <h2>Membership Details</h2>
+                <p>Gold Tier - $29.99/month</p>
+                <p>Next Billing Date: March 10, 2025</p>
+                <a href="#">Manage Subscription</a>
+            </div>
+        </div>
+        
+        <div class="dashboard-section" id="recommendations">
+            <div class="dashboard-card">
+                <h2>Your Cigar Recommendations</h2>
+                <p>Based on your preferences, we recommend:</p>
+                <ul>
+                    <li>Tempus Fugit - Medium-bodied with cedar and spice</li>
+                    <li>Cowboy Caviar - Bold with espresso and chocolate notes</li>
+                    <li>Madam President - Smooth with a hint of sweetness</li>
+                </ul>
+                <a href="shop.html">Shop Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 More Smoke | All Rights Reserved
+    </footer>
+</body>
+</html>

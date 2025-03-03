@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Cigar Lounge - More Smoke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        video {
+            width: 30%;
+            height: auto;
+            border-radius: 5px;
+            background: #333;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        .cta-button {
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Virtual Cigar Lounge</h1>
+    <p>Join a room and smoke with fellow enthusiasts.</p>
+
+    <div class="controls">
+        <button id="startCall" class="cta-button">Start a Room</button>
+        <button id="joinCall" class="cta-button">Join a Room</button>
+    </div>
+
+    <div class="video-container">
+        <video id="localVideo" autoplay playsinline muted></video>
+        <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startCall');
+        const joinButton = document.getElementById('joinCall');
+        const localVideo = document.getElementById('localVideo');
+        const remoteVideo = document.getElementById('remoteVideo');
+        let localStream;
+        let peerConnection;
+        const config = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] };
+
+        async function startCall() {
+            localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            localVideo.srcObject = localStream;
+            peerConnection = new RTCPeerConnection(config);
+            localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+            peerConnection.ontrack = event => remoteVideo.srcObject = event.streams[0];
+
+            const offer = await peerConnection.createOffer();
+            await peerConnection.setLocalDescription(offer);
+
+            fetch('/offer', {
+                method: 'POST',
+                body: JSON.stringify({ offer }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+        async function joinCall() {
+            const response = await fetch('/offer');
+            const { offer } = await response.json();
+
+            localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            localVideo.srcObject = localStream;
+            peerConnection = new RTCPeerConnection(config);
+            localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+            peerConnection.ontrack = event => remoteVideo.srcObject = event.streams[0];
+
+            await peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
+            const answer = await peerConnection.createAnswer();
+            await peerConnection.setLocalDescription(answer);
+
+            fetch('/answer', {
+                method: 'POST',
+                body: JSON.stringify({ answer }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+
+        startButton.addEventListener('click', startCall);
+        joinButton.addEventListener('click', joinCall);
+    </script>
+    <div id="navbar"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
+</body>
+</html>

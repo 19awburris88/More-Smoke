@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cigar Quiz - More Smoke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+        }
+        .quiz-options label {
+            background: #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+        }
+        .quiz-options input {
+            margin-right: 10px;
+        }
+        .quiz-options label:hover {
+            background: #bbb;
+        }
+        .grid-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .other-input {
+            display: flex;
+            flex-direction: column;
+        }
+        .other-input input {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .next-button {
+            display: block;
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Cigar Quiz - Find Your Perfect Smoke</header>
+    
+    <div class="container">
+        <form id="cigarQuiz">
+            <div class="quiz-question">
+                <h3>What strength do you prefer?</h3>
+                <div class="quiz-options">
+                    <label><input type="radio" name="strength" value="mild"> Mild</label>
+                    <label><input type="radio" name="strength" value="medium"> Medium</label>
+                    <label><input type="radio" name="strength" value="full"> Full-bodied</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <h3>What flavor notes do you enjoy?</h3>
+                <div class="quiz-options">
+                    <label><input type="radio" name="flavor" value="chocolate"> Chocolate & Coffee</label>
+                    <label><input type="radio" name="flavor" value="spice"> Spice & Pepper</label>
+                    <label><input type="radio" name="flavor" value="earthy"> Earthy & Nutty</label>
+                    <label><input type="radio" name="flavor" value="sweet"> Sweet & Creamy</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <h3>How long do you usually smoke?</h3>
+                <div class="quiz-options">
+                    <label><input type="radio" name="duration" value="short"> Less than 30 minutes</label>
+                    <label><input type="radio" name="duration" value="medium"> 30-60 minutes</label>
+                    <label><input type="radio" name="duration" value="long"> More than an hour</label>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <h3>What are your favorite cigar brands? (Select all that apply)</h3>
+                <div class="grid-options">
+                    <label><input type="checkbox" name="brand" value="padron"> Padron</label>
+                    <label><input type="checkbox" name="brand" value="davidoff"> Davidoff</label>
+                    <label><input type="checkbox" name="brand" value="montecristo"> Montecristo</label>
+                    <label><input type="checkbox" name="brand" value="cohiba"> Cohiba</label>
+                    <label><input type="checkbox" name="brand" value="rocky"> Rocky Patel</label>
+                    <label><input type="checkbox" name="brand" value="fuente"> Arturo Fuente</label>
+                    <label><input type="checkbox" name="brand" value="oliva"> Oliva</label>
+                    <label><input type="checkbox" name="brand" value="drew"> Drew Estate</label>
+                    <label><input type="checkbox" name="brand" value="romeo"> Romeo y Julieta</label>
+                    <label><input type="checkbox" name="brand" value="liga"> Liga Privada</label>
+                    <label><input type="checkbox" name="brand" value="ashton"> Ashton</label>
+                    <label><input type="checkbox" name="brand" value="perdomo"> Perdomo</label>
+                    <label><input type="checkbox" name="brand" value="camacho"> Camacho</label>
+                    <label><input type="checkbox" name="brand" value="myfather"> My Father</label>
+                    <label><input type="checkbox" name="brand" value="tatuaje"> Tatuaje</label>
+                    <label><input type="checkbox" name="brand" value="nub"> NUB</label>
+                    <label><input type="checkbox" name="brand" value="epc"> E.P. Carrillo</label>
+                    <label><input type="checkbox" name="brand" value="macanudo"> Macanudo</label>
+                    <label><input type="checkbox" name="brand" value="cao"> CAO</label>
+                    <div class="other-input">
+                        <label><input type="checkbox" name="brand" value="other"> Other:</label>
+                        <input type="text" name="other-brand" placeholder="Enter another brand">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-question">
+                <h3>What is your preferred price range per cigar?</h3>
+                <div class="quiz-options">
+                    <label><input type="radio" name="price" value="under10"> Under $10</label>
+                    <label><input type="radio" name="price" value="10-15"> $10 - $15</label>
+                    <label><input type="radio" name="price" value="15-20"> $15 - $20</label>
+                    <label><input type="radio" name="price" value="20plus"> $20+</label>
+                </div>
+            </div>
+            
+            <a href="results.html" class="next-button">Get My Recommendations</a>
+        </form>
+    </div>
+    
+    <footer>
+        &copy; 2025 More Smoke | All Rights Reserved
+    </footer>
+    <div id="navbar"></div>
+
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('navbar').innerHTML = data);
+</script>
+</body>
+</html>
